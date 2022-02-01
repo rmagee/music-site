@@ -9,18 +9,27 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import {useRouter} from "next/router";
 
-const pages = ['music', 'bio', 'home', 'code'];
+const pages = [
+    {display: 'music', path: 'music'},
+    {display: 'bio', path: 'bio'},
+    {display: 'home', path: '/'},
+    {display: 'code', path: 'code'}
+];
 
 const Navigation = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
-
+    const router = useRouter();
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
 
-    const handleCloseNavMenu = () => {
+    const handleCloseNavMenu = (page) => {
         setAnchorElNav(null);
+        console.log('routing to ' + page);
+        const routePath = page === 'home' ? '/' : page;
+        router.push(page);
     };
 
     return (
@@ -31,11 +40,11 @@ const Navigation = () => {
                         variant="p"
                         noWrap
                         component="div"
-                        sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+                        sx={{mr: 2, display: {xs: 'none', md: 'flex'}}}
                     >
                         Rob Magee
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    <Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}}}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -44,7 +53,7 @@ const Navigation = () => {
                             onClick={handleOpenNavMenu}
                             color="inherit"
                         >
-                            <MenuIcon />
+                            <MenuIcon/>
                         </IconButton>
                         <Menu
                             id="menu-appbar"
@@ -61,24 +70,24 @@ const Navigation = () => {
                             open={Boolean(anchorElNav)}
                             onClose={handleCloseNavMenu}
                             sx={{
-                                display: { xs: 'block', md: 'none' },
+                                display: {xs: 'block', md: 'none'},
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                <MenuItem key={page.display} onClick={() => handleCloseNavMenu(page.path)}>
+                                    <Typography textAlign="center">{page.display}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
                     </Box>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
                         {pages.map((page) => (
                             <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                key={page.display}
+                                onClick={() => handleCloseNavMenu(page.path)}
+                                sx={{my: 2, color: 'white', display: 'block'}}
                             >
-                                {page}
+                                {page.display}
                             </Button>
                         ))}
                     </Box>

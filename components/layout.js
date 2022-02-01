@@ -1,59 +1,17 @@
 import Head from 'next/head'
-import styles from './layout.module.css'
-import Link from 'next/link'
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Navigation from "./navigation";
-import {consoleArt} from "../lib/utils";
-const name = 'Rob Magee'
+import {theme as options} from "../lib/theme";
 export const siteTitle = 'Rob Magee'
 
-const themeOptions = {
-    palette: {
-        type: 'light',
-        primary: {
-            main: '#889db8',
-            contrastText: 'rgba(243,238,238,0.87)',
-        },
-        secondary: {
-            main: '#608c8c',
-        },
-        background: {
-            default: '#a3b9d0',
-            paper: '#889db8',
-        },
-        text: {
-            primary: '#ffffff',
-            secondary: '#ffffff',
-            hint: 'rgba(253,253,253,0.38)',
-            disabled: '#757575',
-        },
-        error: {
-            main: '#f4fb6e',
-        },
-        typography: {
-            fontFamily: ['Oswald',
-                '-apple-system',
-                'BlinkMacSystemFont',
-                '"Segoe UI"',
-                '"Helvetica Neue"',
-                'Arial',
-                'sans-serif',
-                '"Apple Color Emoji"',
-                '"Segoe UI Emoji"',
-                '"Segoe UI Symbol"',],
-        },
-    },
-};
-
-const theme = createTheme(themeOptions)
+const theme = createTheme(options)
 
 export default function Layout({children, home}) {
     return (
         <div>
             <Head>
-                <title>Rob Magee</title>
-                consoleArt();
+                <title>{siteTitle}</title>
                 <link rel="icon" href="http://www.robmagee.com/favicon.ico"/>
                 <link
                     rel="stylesheet"
