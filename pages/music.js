@@ -1,11 +1,10 @@
 import Layout from '../components/layout'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Image from "next/image"
 import {useTheme} from "@material-ui/core/styles";
-import ReactPlayer from 'react-player'
 import Audio from "../components/audio";
 import styles from "./music.module.css";
+import SongList from '../components/songList';
 
 export default function Music({allPostsData, otherData}) {
     const theme = useTheme();
@@ -16,11 +15,11 @@ export default function Music({allPostsData, otherData}) {
                     <Grid item xs={1}>
                     </Grid>
                     <Grid item xs={10} className={styles.musicImage}>
+                        <SongList/>
                     </Grid>
                     <Grid item xs={1}>
                     </Grid>
                     <Grid item xs={1}>
-
                     </Grid>
                     <Grid item xs={10}>
                         <Audio/>
