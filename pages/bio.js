@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 import Image from "next/image";
 import Typography from "@mui/material/Typography";
 
-export default function Bio({allPostsData, otherData}) {
+export default function Bio() {
     return (
         <Layout home>
             <Box sx={{m: 3}} style={{marginTop: "45px"}}>
@@ -27,6 +27,7 @@ export default function Bio({allPostsData, otherData}) {
                             src="/images/bio.jpg"
                             width={200}
                             height={200}
+                            alt="Bio Pic"
                             priority
                         />
                     </Grid>

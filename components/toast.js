@@ -10,7 +10,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 export default function Toast(props) {
     const [open, setOpen] = React.useState(true);
 
-    const handleClose = (event, reason) => {
+    const handleClose = () => {
         setOpen(false);
     };
 

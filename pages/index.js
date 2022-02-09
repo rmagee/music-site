@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import Image from "next/image"
 import * as React from "react";
 
-export default function Home({allPostsData, otherData}) {
+export default function Home() {
     return (
         <Layout home>
             <Box sx={{m: 3}} style={{marginTop: "45px"}}>
@@ -18,6 +18,7 @@ export default function Home({allPostsData, otherData}) {
                                 width={200}
                                 height={200}
                                 priority
+                                alt="Ad Astra Image"
                             />
                     </Grid>
                     <Grid item xs={1}>

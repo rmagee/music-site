@@ -15,7 +15,7 @@ const Item = styled(Paper)(({theme}) => ({
     color: theme.palette.text.secondary,
 }));
 
-export default function Home({allPostsData, otherData}) {
+export default function Code() {
     return (
         <Layout home>
             <Box sx={{m: 3}} style={{marginTop: "45px"}}>
@@ -25,6 +25,7 @@ export default function Home({allPostsData, otherData}) {
                             <Stack direction="column">
                                 <Item className={styles.gridItem}>
                                     <Image
+                                        alt="next.js"
                                         layout='responsive'
                                         src="/images/next-js.svg"
                                         width={200}
@@ -41,6 +42,7 @@ export default function Home({allPostsData, otherData}) {
                             <Stack direction="column">
                                 <Item className={styles.gridItem}>
                                     <Image
+                                        alt="Material UI"
                                         layout='responsive'
                                         src="/images/mui.png"
                                         width={200}
@@ -61,6 +63,7 @@ export default function Home({allPostsData, otherData}) {
                                         src="/images/react.png"
                                         width={200}
                                         height={200}
+                                        alt="React JS"
                                         priority
                                     />
                                     <p>
@@ -78,6 +81,7 @@ export default function Home({allPostsData, otherData}) {
                                         width={200}
                                         height={200}
                                         priority
+                                        alt="Node.js"
                                     />
                                     <p>
                                         <a href="https://nodejs.org/">Node.js</a>

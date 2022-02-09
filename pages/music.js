@@ -1,7 +1,7 @@
-import Layout from '../components/layout'
+import Layout, {siteTitle} from '../components/layout'
+import Head from 'next/head'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
-import {useTheme} from "@material-ui/core/styles"
 import Audio from "../components/audio"
 import styles from "./music.module.css"
 import SongList from '../components/songList'
@@ -10,7 +10,7 @@ import fs from 'fs'
 import path from 'path'
 import Typography from "@mui/material/Typography";
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
     const songsFilePath = path.join(process.cwd(), '/data/songs.json')
     const data = fs.readFileSync(songsFilePath, 'utf8')
     const songs = JSON.parse(data)
@@ -23,15 +23,19 @@ export async function getStaticProps(context) {
 }
 
 export default function Music(props) {
-    const [currentSong, setCurrentSong] = useState(props.songs[0].url)
+    const [currentSong, setCurrentSong] = useState(null)
+
     const handleSongClicked = (event, title, url) => {
         event.preventDefault()
         console.log(title + ' was clicked.')
-        setCurrentSong(url)
+        setCurrentSong({url: url, title: title})
     }
-    const theme = useTheme();
+
     return (
         <Layout music>
+            <Head>
+                <title>{siteTitle}: Music</title>
+            </Head>
             <Box sx={{m: 3}} style={{marginTop: "45px"}}>
                 <Grid container direction="row">
                     <Grid item xs={1}>
@@ -46,7 +50,7 @@ export default function Music(props) {
                     <Grid item xs={1}>
                     </Grid>
                     <Grid item xs={15}>
-                        <Audio url={currentSong}/>
+                        <Audio {...currentSong}/>
                     </Grid>
                     <Grid item xs={1}>
                     </Grid>
