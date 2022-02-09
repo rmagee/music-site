@@ -1,12 +1,34 @@
 import Layout from '../components/layout'
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import {useTheme} from "@material-ui/core/styles";
-import Audio from "../components/audio";
-import styles from "./music.module.css";
-import SongList from '../components/songList';
+import Box from '@mui/material/Box'
+import Grid from '@mui/material/Grid'
+import {useTheme} from "@material-ui/core/styles"
+import Audio from "../components/audio"
+import styles from "./music.module.css"
+import SongList from '../components/songList'
+import React, {useState} from "react"
+import fs from 'fs'
+import path from 'path'
+import Typography from "@mui/material/Typography";
 
-export default function Music({allPostsData, otherData}) {
+export async function getStaticProps(context) {
+    const songsFilePath = path.join(process.cwd(), '/data/songs.json')
+    const data = fs.readFileSync(songsFilePath, 'utf8')
+    const songs = JSON.parse(data)
+
+    return {
+        props: {
+            songs,
+        }, // will be passed to the page component as props
+    }
+}
+
+export default function Music(props) {
+    const [currentSong, setCurrentSong] = useState(props.songs[0].url)
+    const handleSongClicked = (event, title, url) => {
+        event.preventDefault()
+        console.log(title + ' was clicked.')
+        setCurrentSong(url)
+    }
     const theme = useTheme();
     return (
         <Layout music>
@@ -14,18 +36,26 @@ export default function Music({allPostsData, otherData}) {
                 <Grid container direction="row">
                     <Grid item xs={1}>
                     </Grid>
-                    <Grid item xs={10} className={styles.musicImage}>
-                        <SongList/>
+                    <Grid item xs={15}>
+                        <Typography variant="h6" sx={{flexGrow: 1, textAlign: "center"}}>
+                            Music
+                        </Typography>
                     </Grid>
                     <Grid item xs={1}>
                     </Grid>
                     <Grid item xs={1}>
                     </Grid>
-                    <Grid item xs={10}>
-                        <Audio/>
+                    <Grid item xs={15}>
+                        <Audio url={currentSong}/>
                     </Grid>
                     <Grid item xs={1}>
-
+                    </Grid>
+                    <Grid item xs={1}>
+                    </Grid>
+                    <Grid item xs={15} className={styles.musicImage}>
+                        <SongList {...props} handleSongClicked={handleSongClicked}/>
+                    </Grid>
+                    <Grid item xs={1}>
                     </Grid>
                 </Grid>
             </Box>

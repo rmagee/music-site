@@ -1,0 +1,5 @@
+.songList{
+    list-style-type:none;
+    display:flex;
+    justify-content: center;
+}

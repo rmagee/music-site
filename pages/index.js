@@ -2,6 +2,7 @@ import Layout from '../components/layout'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Image from "next/image"
+import * as React from "react";
 
 export default function Home({allPostsData, otherData}) {
     return (
