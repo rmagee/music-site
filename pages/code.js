@@ -19,9 +19,14 @@ const Item = styled(Paper)(({theme}) => ({
 export default function Code() {
     return (
         <Layout home>
+            <h3 style={{flexGrow: "1", textAlign: "center"}}>
+                CODE
+            </h3>
             <Box sx={{m: 3}} style={{marginTop: "45px"}}>
-                <p>This site was developed in JavaScript utilizing the technologies below, can be easily customized and styled
-                    and has been <Link color="inherit" href="github.com">made available for free here</Link>.</p>
+                <p>This site was developed in JavaScript utilizing the technologies below,
+                    can be easily customized and styled in six easy steps
+                    and has been <Link color="inherit" href="https://github.com/rmagee/music-site">made available for
+                        free here</Link>.</p>
                 <Box sx={{flexGrow: 1}}>
                     <Grid container spacing={{xs: 2, md: 3}} columns={{xs: 4, sm: 4, md: 4}}>
                         <Grid item xs={2} sm={2} md={1} key="next">

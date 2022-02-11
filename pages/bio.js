@@ -26,9 +26,9 @@ export default function Bio(props) {
                     <Grid item xs={1}>
                     </Grid>
                     <Grid item xs={10}>
-                        <Typography variant="h6" sx={{flexGrow: 1, textAlign: "center"}}>
-                            Bio
-                        </Typography>
+                        <h3  style={{flexGrow: "1", textAlign: "center"}}>
+                            BIO
+                        </h3>
                     </Grid>
                     <Grid item xs={1}>
                     </Grid>

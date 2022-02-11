@@ -41,9 +41,9 @@ export default function Music(props) {
                     <Grid item xs={1}>
                     </Grid>
                     <Grid item xs={15}>
-                        <Typography variant="h6" sx={{flexGrow: 1, textAlign: "center"}}>
-                            Music
-                        </Typography>
+                        <h3  style={{flexGrow: "1", textAlign: "center"}}>
+                            MUSIC
+                        </h3>
                     </Grid>
                     <Grid item xs={1}>
                     </Grid>
