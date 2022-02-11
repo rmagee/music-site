@@ -27,7 +27,7 @@ function SongList(props) {
 
     return (
         loaded ?
-            <div style={{marginTop: "10px"}}>{songList}</div>
+            <div style={{marginTop: "10px", backgroundImage: "/images/music.jpg"}}>{songList}</div>
              :
             (error ?
                     <Toast open="true" message="There was an error retrieving the song list." severity="info"/> :

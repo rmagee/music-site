@@ -1,11 +1,24 @@
-import React from 'react';
-import Layout from "../components/layout";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import Image from "next/image";
-import Typography from "@mui/material/Typography";
+import React from 'react'
+import Layout from "../components/layout"
+import Box from "@mui/material/Box"
+import Grid from "@mui/material/Grid"
+import Image from "next/image"
+import Typography from "@mui/material/Typography"
+import fs from 'fs'
+import path from 'path'
 
-export default function Bio() {
+export async function getStaticProps() {
+    const songsFilePath = path.join(process.cwd(), '/data/bio.txt')
+    const data = fs.readFileSync(songsFilePath, 'utf8')
+    return {
+        props: {
+            bio: data,
+        }, // will be passed to the page component as props
+    }
+}
+
+
+export default function Bio(props) {
     return (
         <Layout home>
             <Box sx={{m: 3}} style={{marginTop: "45px"}}>
@@ -36,9 +49,8 @@ export default function Bio() {
                     <Grid item xs={1}>
                     </Grid>
                     <Grid item xs={10}>
-                        <p>Rob Magee is a Colorado based song writer, producer and performer. All of the material on
-                            this site was engineered, written, performed and produced by Rob and can be heard by
-                            visiting the music page.
+                        <p>
+                            {props.bio}
                         </p>
                     </Grid>
                     <Grid item xs={1}>

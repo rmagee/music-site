@@ -1,8 +1,10 @@
 .musicImage{
-    height: 80vh;
+    height: 100%;
     width: 80vh;
     background-size: cover;
     background-image: url("/images/music.jpg");
+    align-items: center;
+    justify-content: center;
 }
 
 .audioPlayer {
@@ -13,8 +15,6 @@
 }
 
 .audioDiv {
-    margin: 16px;
     background-color: inherit;
     align-content: center;
-    margin: 0 auto;
 }

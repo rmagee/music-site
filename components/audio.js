@@ -123,7 +123,7 @@ function Audio(props) {
         <Box sx={{width: "100%", alignItems: "center", alignContent: "center", margin: "0, auto"}}>
             <audio id="audioPlayer" src={props.url} onTimeUpdate={handleTimeUpdate} onEnded={stopAudio}
                    onLoadedMetadata={handleLoadedMetadata}/>
-            <Stack spacing={2} direction="row" sx={{mb: 1}} alignItems="center">
+            <Stack spacing={2} direction="row" sx={{mb: 1,  paddingRight: "21px"}} alignItems="center">
                 {button}
                 <Slider
                     aria-label="Position"

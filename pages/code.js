@@ -6,6 +6,7 @@ import Box from '@mui/material/Box'
 import Layout from '../components/layout'
 import styles from './code.module.css'
 import Stack from "@mui/material/Stack";
+import Link from '@mui/material/Link';
 import Image from "next/image";
 
 const Item = styled(Paper)(({theme}) => ({
@@ -19,6 +20,8 @@ export default function Code() {
     return (
         <Layout home>
             <Box sx={{m: 3}} style={{marginTop: "45px"}}>
+                <p>This site was developed in JavaScript utilizing the technologies below, can be easily customized and styled
+                    and has been <Link color="inherit" href="github.com">made available for free here</Link>.</p>
                 <Box sx={{flexGrow: 1}}>
                     <Grid container spacing={{xs: 2, md: 3}} columns={{xs: 4, sm: 4, md: 4}}>
                         <Grid item xs={2} sm={2} md={1} key="next">
@@ -32,9 +35,7 @@ export default function Code() {
                                         height={200}
                                         priority
                                     />
-                                    <p>
-                                        <a href="https://nextjs.org/">Next.js</a>
-                                    </p>
+                                    <Link color="inherit" href="https://nextjs.org/">Next.js</Link>
                                 </Item>
                             </Stack>
                         </Grid>
@@ -49,9 +50,7 @@ export default function Code() {
                                         height={200}
                                         priority
                                     />
-                                    <p>
-                                        MaterialUI
-                                    </p>
+                                    <Link color="inherit" href="https://mui.com/">MUI</Link>
                                 </Item>
                             </Stack>
                         </Grid>
@@ -66,9 +65,7 @@ export default function Code() {
                                         alt="React JS"
                                         priority
                                     />
-                                    <p>
-                                        React
-                                    </p>
+                                    <Link color="inherit" href="https://reactjs.org/">React</Link>
                                 </Item>
                             </Stack>
                         </Grid>
@@ -83,9 +80,7 @@ export default function Code() {
                                         priority
                                         alt="Node.js"
                                     />
-                                    <p>
-                                        <a href="https://nodejs.org/">Node.js</a>
-                                    </p>
+                                    <Link color="inherit" href="https://nodejs.org/">Node.js</Link>
                                 </Item>
                             </Stack>
                         </Grid>

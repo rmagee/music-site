@@ -3,8 +3,10 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Image from "next/image"
 import * as React from "react";
+import {consoleArt} from "../lib/utils";
 
 export default function Home() {
+    consoleArt()
     return (
         <Layout home>
             <Box sx={{m: 3}} style={{marginTop: "45px"}}>

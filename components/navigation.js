@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import Menu from '@mui/material/Menu'
+import Link from '@material-ui/core/Link'
 import MenuIcon from '@mui/icons-material/Menu'
 import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
@@ -12,10 +13,10 @@ import MenuItem from '@mui/material/MenuItem'
 import {useRouter} from "next/router"
 import Stack from "@mui/material/Stack";
 
+
 const pages = [
     {display: 'music', path: 'music'},
     {display: 'bio', path: 'bio'},
-    {display: 'home', path: '/'},
     {display: 'code', path: 'code'}
 ];
 
@@ -47,7 +48,7 @@ const Navigation = () => {
                         component="div"
                         sx={{mr: 2, display: {xs: 'none', md: 'flex'}}}
                     >
-                        ROB MAGEE
+                        <Link href="/" color="inherit" style={{marginRight: "30px", textDecoration: "none"}}>ROB MAGEE</Link>
                     </Typography>
                     <Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}}}>
                         <Stack direction="row" justifyContent="center" alignItems="center">
@@ -67,7 +68,7 @@ const Navigation = () => {
                                 component="div"
                                 sx={{mr: 2, display: {md: 'flex'}}}
                             >
-                                ROB MAGEE
+                                <Link href="/" color="inherit" sx={{marginRight: "35px"}}>ROB MAGEE</Link>
                             </Typography>
                         </Stack>
                         <Menu

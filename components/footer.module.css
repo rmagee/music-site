@@ -1,0 +1,12 @@
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    font-size: 7pt;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    padding-top: 13px;
+}
