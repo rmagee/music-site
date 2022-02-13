@@ -9,7 +9,7 @@ export const siteTitle = 'Rob Magee'
 
 const theme = createTheme(options)
 
-export default function Layout({children, home}) {
+export default function Layout({children}) {
     return (
         <div>
             <Head>
@@ -28,7 +28,9 @@ export default function Layout({children, home}) {
                 <meta name="twitter:card" content="summary_large_image"/>
                 <link rel="preconnect" href="https://fonts.googleapis.com"/>
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
-                <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"/>
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+                    rel="stylesheet"/>
             </Head>
             <ThemeProvider theme={theme}>
                 <CssBaseline/>

@@ -91,7 +91,7 @@ const Navigation = () => {
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page.display} onClick={() => handleCloseNavMenu(page.path)}>
-                                    <Typography textAlign="center">{page.display}</Typography>
+                                    <Typography variant="p" textAlign="center">{page.display}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
