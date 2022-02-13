@@ -81,6 +81,9 @@ bio page.
 The footer contains text relative to copyright information, etc.  This can be modified in the _/components/footer.js_
 file.
 
+## Step 7. Modify the next.config.js
+Remove the robmagee.com and www.robmagee.com configuration values in the file and replace with
+your domain name.
 
 ## Learn More
 
