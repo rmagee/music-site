@@ -14,7 +14,7 @@ export default function Layout({children}) {
         <div>
             <Head>
                 <title>{siteTitle}</title>
-                <link rel="icon" href="http://www.robmagee.com/favicon.ico"/>
+                <link rel="icon" href="/favicon.ico"/>
                 <link
                     rel="stylesheet"
                     href="https://fonts.googleapis.com/icon?family=Material+Icons"
